@@ -1,0 +1,123 @@
+﻿@using Biblio.Business.Models
+
+@model ShowRequestModel
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h1>Biblio Demo</h1>
+    </div>
+    <div class="panel-footer">
+
+        @using (Html.BeginForm("show", "home", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+        {
+
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.RawInput, "Text :", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextAreaFor(m => m.RawInput, new { @class = "form-control", cols = "100", rows = "4", placeholder = "Enter text here" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.Palindrome, "Palindromes detected :", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextAreaFor(m => m.Palindrome, new { @class = "form-control", cols = "100", rows = "4", @readonly = "true" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.Duplicate, "Duplicates detected :", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextAreaFor(m => m.Duplicate, new { @class = "form-control", cols = "100", rows = "4", @readonly = "true" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.WordCount, "Words detected :", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextBoxFor(m => m.WordCount, new { @class = "form-control", @readonly = "true" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.VowelCount, "Vowels detected :", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextBoxFor(m => m.VowelCount, new { @class = "form-control", @readonly = "true" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.ConsonantCount, "Consonants detected :", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextBoxFor(m => m.ConsonantCount, new { @class = "form-control", @readonly = "true" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.SpecialCharacterCount, "Special characters detected :", new { @class = "col-sm-2 control-label", @nowrap="nowrap" })
+
+                <div class="col-sm-10">
+
+                    @Html.TextBoxFor(m => m.SpecialCharacterCount, new { @class = "form-control", @readonly = "true" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-sm-10 col-sm-offset-2">
+
+                    <button id="Send" value="Send">Send</button>
+
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h4 class="modal-title" id="myModalLabel">Oops</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="modalBody"></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
