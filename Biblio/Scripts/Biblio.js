@@ -1,8 +1,11 @@
 ﻿$("#Send").attr("disabled", true);
 
+//$("#RawInput").jqte({ change: function () { window.setTimeout(function () { process(unescape($("#RawInput").val())); }, 500); } });
+
 $("#RawInput").keyup(function ()
 {
-    process($("#RawInput").val());
+    //process($("#RawInput").val());
+    window.setTimeout(function () { process(unescape($("#RawInput").val())); }, 500);
 });
 
 function isPalindrome(str)
