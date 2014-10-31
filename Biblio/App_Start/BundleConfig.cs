@@ -24,13 +24,13 @@ namespace Biblio
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/biblio").Include(
-                        "~/Scripts/jquery-te-1.4.0.min.js",
+                        //"~/Scripts/jquery-te-1.4.0.min.js",
                         "~/Scripts/Biblio.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/jquery-te-1.4.0.css"));
+                      //"~/Content/jquery-te-1.4.0.css",
+                      "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

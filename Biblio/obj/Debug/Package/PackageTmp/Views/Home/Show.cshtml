@@ -1,0 +1,77 @@
+﻿@using Biblio.Business.Models
+
+@model ResponseModel
+
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h1>Biblio Demo - show results</h1>
+        </div>
+        <div class="panel-footer">
+
+            @if (Model.HasError)
+            { 
+                <div class="panel panel-danger">
+                    <div class="panel-body">
+                        A Message from the server :
+                    </div>
+                    <div class="panel-footer">@Model.ErrorMessage</div>
+                </div>
+            }
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Original text input :
+                </div>
+                <div class="panel-footer">@Model.RawInput</div>
+            </div>
+
+            @using (Html.BeginForm("save", "home", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+            {
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Palindromes detected :
+                    </div>
+                    <div class="panel-footer">
+                    
+                        @Html.TextAreaFor(m => m.Palindrome, new { @class = "form-control", cols = "100", rows = "4", @readonly = "true", @value = @Model.Palindrome })
+
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Duplicates detected :
+                    </div>
+                    <div class="panel-footer">
+
+                        @Html.TextAreaFor(m => m.Duplicate, new { @class = "form-control", cols = "100", rows = "4", @readonly = "true", @value = @Model.Duplicate })
+
+                    </div>
+                </div>
+
+                <div class="container">
+
+                    <div class="col-sm-10">
+
+                        @if(Model.CanSave)
+                        {
+                            <input type="submit" id="Save" value="Save">
+                        }
+                        else
+                        {
+                            <input type="submit" id="Save" value="Save" disabled="disabled">
+                        }
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+    
+</div>
