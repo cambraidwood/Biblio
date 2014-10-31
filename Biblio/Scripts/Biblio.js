@@ -5,12 +5,10 @@ $("#RawInput").keyup(function ()
     window.setTimeout(function () { process(unescape($("#RawInput").val())); }, 500);
 });
 
-function isPalindrome(str)
+function isPalindrome(word)
 {
     // Unsure if a palindrome can be a single character, 'a' and 'i' might be special cases as they are valid 'words'.
     // Unsure if a single number can be a palindrome, presume not.
-
-    var word = str.toLowerCase();
 
     if (word == "a" || word == "i")
         return (true);
@@ -61,9 +59,10 @@ function process(txt)
             splitTxt = txt.trim().split(splitPattern);
 
             // determine if we have a palindrome, unique or a duplicate word
+            // switch everything to lowercase, it makes most sense ... 
 
             for (var i = 0; i < splitTxt.length; i++) {
-                word = splitTxt[i];
+                word = splitTxt[i].toLowerCase();
 
                 if (isPalindrome(word))
                     palindromeHash[word] = true;

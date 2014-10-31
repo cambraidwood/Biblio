@@ -2,3 +2,4 @@ D:\Cam\development\Projects\Biblio\Biblio.Business\bin\Debug\Biblio.Business.dll
 D:\Cam\development\Projects\Biblio\Biblio.Business\bin\Debug\Biblio.Business.pdb
 D:\Cam\development\Projects\Biblio\Biblio.Business\obj\Debug\Biblio.Business.dll
 D:\Cam\development\Projects\Biblio\Biblio.Business\obj\Debug\Biblio.Business.pdb
+D:\Cam\development\Projects\Biblio\Biblio.Business\obj\Debug\Biblio.Business.csprojResolveAssemblyReference.cache
